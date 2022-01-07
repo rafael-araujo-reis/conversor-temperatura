@@ -1,5 +1,10 @@
+import { Container } from "./styles";
+
 export function Header() {
     return (
-        <h1>Conversor de Temperatura</h1>
+        <Container>
+            <div></div>
+            <h1>Conversor de Temperatura</h1>
+        </Container>
     )
 }
