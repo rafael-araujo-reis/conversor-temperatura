@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     :root{
-        --background: linear-gradient(178.87deg, #6ADBFF 0.97%, rgba(255, 255, 255, 0) 133.36%);
+        --background: linear-gradient(161.37deg, #6ADBFF 12.61%, rgba(254, 222, 222, 0.59) 90.42%);;
         
         --text-title: #035875;
         --text-body: #FFFFFF;
@@ -26,13 +26,17 @@ export const GlobalStyle = createGlobalStyle`
         }
         @media (max-width: 720px) {
             font-size: 83.5%
-        }   
+        }
     }
 
     body{
+        --webkit-font-smoothing: antialiased;
+
         background: var(--background) no-repeat;
         min-height: 100vh;
-        --webkit-font-smoothing: antialiased;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     body,input, textarea, button{
