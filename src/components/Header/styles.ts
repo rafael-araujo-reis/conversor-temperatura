@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.header`
     padding: 5rem 2rem 3rem;
 
-    div{
+    .sunshine{
         background: radial-gradient(50% 50% at 50% 50%, #F4BF00 0%, rgba(196, 196, 196, 0) 100%);
         width: 500px;
         height: 500px;
@@ -14,7 +14,6 @@ export const Container = styled.header`
         transform: translate(50%, -50%);
 
         border-radius: 500px;
-        
     }
     h1{ 
         font-size: 3rem;

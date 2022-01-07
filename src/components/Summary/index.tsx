@@ -1,14 +1,16 @@
+import { CardContext, Container } from "./styles";
+
 export function Summary() {
     return (
-        <>
-            <div>
+        <Container>
+            <CardContext>
                 <h2>50.7º</h2>
                 <p>Fahrenheit</p>
-            </div>
-            <div>
+            </CardContext>
+            <CardContext>
                 <h2>120.7º</h2>
                 <p>Celsius</p>
-            </div>
-        </>
+            </CardContext>
+        </Container>
     );
 }

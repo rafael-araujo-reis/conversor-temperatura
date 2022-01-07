@@ -1,3 +1,4 @@
+import { Background } from "./components/Background";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { Summary } from "./components/Summary";
@@ -9,6 +10,7 @@ export function App() {
       <Header />
       <Dashboard />
       <Summary />
+      <Background />
       <GlobalStyle />
     </>
   );
