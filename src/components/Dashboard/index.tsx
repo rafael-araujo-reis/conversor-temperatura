@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { useTemperature } from "../../hooks";
-import { Container, RadioBox } from "./styles";
+import { Container, Context, RadioBox } from "./styles";
 
 export function Dashboard() {
 
@@ -9,20 +10,38 @@ export function Dashboard() {
         onSetTemperature
     } = useTemperature();
 
+    const [type, setType] = useState('Celsius')
+
+    useEffect(() => {
+        handleSelectedTemperature(type)
+    }, [type])
+
     return (
         <Container>
             <p>Qual a temperatura deseja converter?</p>
-            <RadioBox>
-                <button type="button" onClick={
-                    () => handleSelectedTemperature('Celsius')
-                }>Celsius</button>
-                <button type="button" onClick={
-                    () => handleSelectedTemperature('Fahrenheit')
-                }>Fahrenheit</button>
-                <button type="button" onClick={
-                    () => handleSelectedTemperature('Kelvin')
-                }>Kelvin</button>
-            </RadioBox>
+            <Context>
+                <RadioBox
+                    type="button"
+                    isActive={type === 'Celsius'}
+                    onClick={
+                        () => setType('Celsius')
+                    }>Celsius
+                </RadioBox>
+                <RadioBox
+                    type="button"
+                    isActive={type === 'Fahrenheit'}
+                    onClick={
+                        () => setType('Fahrenheit')
+                    }>Fahrenheit
+                </RadioBox>
+                <RadioBox
+                    type="button"
+                    isActive={type === 'Kelvin'}
+                    onClick={
+                        () => setType('Kelvin')
+                    }>Kelvin
+                </RadioBox>
+            </Context>
             <input
                 type="number"
 

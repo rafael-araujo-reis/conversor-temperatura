@@ -35,7 +35,7 @@ export function useTemperature() {
 
 export function TemperatureProvider({ children }: TemperatureProviderProps) {
     const [temperature, setTemperature] = useState(0);
-    const [typeTemperature, setTypeTemperature] = useState<string>('');
+    const [typeTemperature, setTypeTemperature] = useState<string>('Celsius');
     const [temperatureConvert, setTemperatureConvert] = useState<TemperatureConvert[]>([])
 
     const [temperatureConvertOne, setTemperatureConvertOne] = useState(0)
@@ -44,8 +44,6 @@ export function TemperatureProvider({ children }: TemperatureProviderProps) {
     const [typeTemperatureConvertTwo, setTypeTemperatureConvertTwo] = useState('')
 
     useEffect(() => {
-        console.log(`temperatura mudou `)
-        console.log(`type: ${typeTemperature} temperature: ${temperature}`)
         setTypeTemperature(typeTemperature);
         onConvertTemperature(typeTemperature);
     }, [temperature]);
@@ -53,7 +51,7 @@ export function TemperatureProvider({ children }: TemperatureProviderProps) {
     function handleSelectedTemperature(typeTemperature: string) {
         setTypeTemperature(typeTemperature);
         onConvertTemperature(typeTemperature);
-        console.log(`type: ${typeTemperature} temperature: ${temperature}`)
+        // console.log(`type: ${typeTemperature} temperature: ${temperature}`)
     }
 
     function onConvertTemperature(type: string) {
@@ -64,6 +62,9 @@ export function TemperatureProvider({ children }: TemperatureProviderProps) {
 
             fahrenheit = celsius * 9 / 5 + 32;
             kelvin = celsius + 273.15;
+
+
+            console.log('temperature Convert: ', temperatureConvert)
 
             setTemperatureConvertOne(fahrenheit);
             setTypeTemperatureConvertOne('Fahrenheit');

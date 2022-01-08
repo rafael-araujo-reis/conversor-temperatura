@@ -1,5 +1,9 @@
+import { darken } from 'polished'
 import styled from 'styled-components'
 
+interface RadioBoxProps {
+    isActive: boolean;
+}
 export const Container = styled.section`
     display: flex;
     flex-direction: column;
@@ -32,27 +36,30 @@ export const Container = styled.section`
             font-size: 1rem;
         }
     }
-    `
+`
 
-export const RadioBox = styled.div`
+export const Context = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    
-    button{
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 0.25rem;
+`
 
-        font-size: 1rem;
+export const RadioBox = styled.button<RadioBoxProps>`
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.25rem;
 
-        color: var(--text-body);
-        background-color: var(--dark-blue);
-        transition: filter 0.3s;
+    font-size: 1rem;
 
-        &:hover{
-          filter: brightness(0.8);
-        }
+    color: var(--text-body);
+    background: ${(props) => props.isActive ?
+        darken(0.15, '#03749B') :
+        '#03749B'
+    };
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: ${darken(0.15, '#03749B')};
     }
 `
 
