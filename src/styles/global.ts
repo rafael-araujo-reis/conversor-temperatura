@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     :root{
@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         --webkit-font-smoothing: antialiased;
 
         background: var(--background) no-repeat;
+
         min-height: 100vh;
         max-width: 1200px;
         margin: 0 auto;
