@@ -38,6 +38,7 @@ export function TemperatureProvider({ children }: TemperatureProviderProps) {
     const [typeTemperature, setTypeTemperature] = useState<string>('Celsius');
     const [temperatureConvert, setTemperatureConvert] = useState<TemperatureConvert[]>([])
 
+    // Remover esse trecho
     const [temperatureConvertOne, setTemperatureConvertOne] = useState(0)
     const [temperatureConvertTwo, setTemperatureConvertTwo] = useState(0)
     const [typeTemperatureConvertOne, setTypeTemperatureConvertOne] = useState('')
@@ -64,6 +65,8 @@ export function TemperatureProvider({ children }: TemperatureProviderProps) {
             kelvin = celsius + 273.15;
 
 
+            let newValue: TemperatureConvert;
+            setTemperatureConvert([...temperatureConvert])
             console.log('temperature Convert: ', temperatureConvert)
 
             setTemperatureConvertOne(fahrenheit);
