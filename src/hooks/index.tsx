@@ -82,11 +82,11 @@ export function TemperatureProvider({ children }: TemperatureProviderProps) {
             celsius = (fahrenheit - 32) * 5 / 9;
             kelvin = (fahrenheit - 32) * 5 / 9 + 273.15;
 
-            setTemperatureConvertOne(celsius);
-            setTypeTemperatureConvertOne('Celsius');
+            setTemperatureConvertOne(kelvin);
+            setTypeTemperatureConvertOne('Kelvin');
 
-            setTemperatureConvertTwo(kelvin);
-            setTypeTemperatureConvertTwo('Kelvin');
+            setTemperatureConvertTwo(celsius);
+            setTypeTemperatureConvertTwo('Celsius');
 
 
             console.log(`fahrenheit ${fahrenheit} -> celsius ${celsius} kelvin ${kelvin}`)

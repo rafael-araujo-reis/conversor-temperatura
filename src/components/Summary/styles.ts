@@ -9,7 +9,11 @@ export const Container = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-`
+
+    @media (max-width: 720px) {
+        grid-template-columns: 1fr;
+    }
+    `
 
 export const CardContext = styled.div`
     background-color: var(--light-blue);
@@ -18,6 +22,10 @@ export const CardContext = styled.div`
     font-weight: 400;
     
     border-radius: 0.25rem;
+    
+    @media (max-width: 720px) {
+        margin: 0 1rem;
+    }
     
     h2{
         font-size: 3.25rem;

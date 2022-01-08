@@ -36,12 +36,19 @@ export const Container = styled.section`
             font-size: 1rem;
         }
     }
+    @media (max-width: 420px) {
+        margin: 0 1rem;
+    }
 `
 
 export const Context = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    
+    @media (max-width: 420px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const RadioBox = styled.button<RadioBoxProps>`
