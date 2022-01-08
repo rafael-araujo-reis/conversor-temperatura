@@ -1,15 +1,30 @@
+import { useTemperature } from "../../hooks";
 import { CardContext, Container } from "./styles";
 
 export function Summary() {
+    const {
+        temperatureConvert,
+
+        temperatureConvertOne,
+        typeTemperatureConvertOne,
+        temperatureConvertTwo,
+        typeTemperatureConvertTwo,
+    } = useTemperature();
     return (
         <Container>
+            {temperatureConvert.map(temperature => {
+                <CardContext>
+                    <h2>{temperature.temperatureConvert}</h2>
+                    <p>{temperature.typeTemperatureConvert}</p>
+                </CardContext>
+            })}
             <CardContext>
-                <h2>50.7º</h2>
-                <p>Fahrenheit</p>
+                <h2>{temperatureConvertOne}</h2>
+                <p>{typeTemperatureConvertOne}</p>
             </CardContext>
             <CardContext>
-                <h2>120.7º</h2>
-                <p>Celsius</p>
+                <h2>{temperatureConvertTwo}</h2>
+                <p>{typeTemperatureConvertTwo}</p>
             </CardContext>
         </Container>
     );
